@@ -1,10 +1,9 @@
 :root{
-  --paper:#fbfaf7;
-  --ink:#080808;
-  --muted:#777;
-  --line:#111;
+  --paper:#f8f6ef;
+  --ink:#050505;
+  --muted:#6b675f;
+  --line:#d9d3c8;
 }
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -16,112 +15,59 @@ body{
   min-height:100vh;
 }
 a{color:inherit;text-decoration:none}
-a:hover{text-decoration:underline;text-underline-offset:4px}
-
+img{display:block;max-width:100%}
 .site-header{
-  height:112px;
+  height:132px;
+  padding:0 5vw;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 5.2vw;
-  font-size:14px;
   font-weight:700;
-  letter-spacing:.25em;
-  text-transform:uppercase;
+  background:var(--paper);
 }
-.brand{font-size:20px;white-space:nowrap}
-.site-header nav{display:flex;gap:56px;align-items:center}
-.site-header nav a{font-weight:700}
-
-.top-work-border{
-  width:100%;
-  height:270px;
-  overflow:hidden;
-  border-top:1px solid rgba(0,0,0,.08);
-  border-bottom:1px solid rgba(0,0,0,.08);
-}
-.top-work-border img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center 49%;
-  display:block;
-}
-
-.layout-frame{padding:0 5.2vw}
-.home-main{
-  min-height:calc(100vh - 112px - 270px);
+.name{font-size:22px;letter-spacing:.28em;white-space:nowrap}
+nav{display:flex;gap:52px;font-size:13px;letter-spacing:.22em}
+nav a:hover,.home-links a:hover,.collection-row:hover{text-decoration:underline;text-underline-offset:6px}
+.banner{width:100%;height:340px;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.banner img{width:100%;height:100%;object-fit:cover;object-position:center 44%}
+.home-grid{
+  min-height:520px;
+  padding:88px 8vw 80px;
   display:grid;
-  grid-template-columns:minmax(330px, 1fr) minmax(160px, 370px);
+  grid-template-columns:1fr 310px;
   column-gap:12vw;
   align-items:start;
-  padding-top:88px;
 }
-.hero-text h1{
-  margin:0;
-  font-size:clamp(36px, 4.2vw, 62px);
-  line-height:1.28;
-  font-family:"Courier New", Courier, monospace;
-  font-weight:700;
-  letter-spacing:.28em;
-  text-transform:uppercase;
-}
-.hero-text h1 a{display:inline-block}
-.hero-text h1 a:hover{transform:translateX(8px);text-decoration:none}
-
-.portrait-card{
-  justify-self:start;
-  margin-top:28px;
-  transform:translateX(-34px);
-}
-.artist-photo{
-  width:170px;
-  height:230px;
-  display:block;
-  object-fit:cover;
-  object-position:center center;
-  border:6px solid #050505;
-  background:#111;
-  filter:grayscale(100%) contrast(.95) sepia(.12);
-}
-
-.site-footer{
-  position:fixed;
-  left:5.2vw;
-  bottom:42px;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-}
-
-.page-main{padding-top:70px;padding-bottom:140px}
-.page-title h1,.contact-page h1,.collection-info h1{
-  margin:0 0 28px;
-  font-size:clamp(38px, 5vw, 72px);
-  line-height:1.1;
-  font-weight:700;
-  letter-spacing:.25em;
-  text-transform:uppercase;
-}
-p{letter-spacing:.06em;line-height:1.65;max-width:760px}
-.small{font-size:13px;color:#333}
-.big-about{font-size:clamp(28px,4.5vw,60px);line-height:1.15;letter-spacing:.03em;max-width:1000px;margin-top:0}
-.about-page{display:grid;grid-template-columns:1fr 260px;gap:8vw;align-items:start}
-.about-image img{width:220px;height:295px;object-fit:cover;border:6px solid #050505;filter:grayscale(100%) contrast(.95) sepia(.12)}
-.collection-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:58px}
-.collection-card h2{font-size:16px;letter-spacing:.16em;text-transform:uppercase;margin:18px 0 4px}
-.collection-card p{font-size:13px;margin:0;color:#444}
-.image-placeholder,.work-image{background:#eee;border:1px solid #111;display:flex;align-items:center;justify-content:center;min-height:280px;overflow:hidden}
-.work-image img{width:100%;height:100%;object-fit:cover;display:block}
-.single-collection{display:grid;grid-template-columns:260px 1fr;gap:7vw;align-items:start}
-.artwork-list{display:grid;gap:80px}.large-work{min-height:560px}
-.large-email{font-size:clamp(22px,4vw,52px);letter-spacing:.08em}
-
-@media (max-width:800px){
-  .site-header{height:auto;padding:28px 22px;align-items:flex-start;gap:24px;flex-direction:column;font-size:12px}
-  .brand{font-size:16px}.site-header nav{gap:22px;flex-wrap:wrap}.top-work-border{height:155px}
-  .layout-frame{padding:0 22px}.home-main{display:block;padding-top:48px}.hero-text h1{font-size:34px;letter-spacing:.18em}
-  .portrait-card{margin-top:54px;transform:none}.artist-photo{width:138px;height:188px}.site-footer{position:static;margin:80px 22px 32px}
-  .about-page,.single-collection{display:block}.about-image{margin-top:40px}.collection-grid{grid-template-columns:1fr}.large-work{min-height:360px}
+.home-links{padding-left:1vw;display:flex;flex-direction:column;gap:18px}
+.home-links a{font-size:40px;line-height:1.08;font-weight:700;letter-spacing:.24em;width:max-content}
+.portrait-card{width:176px;margin-top:28px;margin-left:-72px;border:6px solid #050505;background:#050505;box-shadow:0 1px 0 rgba(0,0,0,.08)}
+.portrait-card img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center center;filter:grayscale(100%) contrast(1.04)}
+footer{padding:50px 5vw;font-size:13px;letter-spacing:.22em;color:#111}
+.page{padding:86px 5vw 120px;min-height:calc(100vh - 132px)}
+.page-narrow{max-width:980px;margin:0 auto}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.28em;margin:0 0 32px;color:var(--muted)}
+h1{font-size:42px;line-height:1.05;letter-spacing:.12em;font-weight:700;margin:0 0 38px}
+.collection-row{display:flex;justify-content:space-between;gap:32px;border-top:1px solid var(--ink);padding:24px 0;font-size:28px;line-height:1.05;font-weight:700;letter-spacing:.13em}
+.collection-row:last-child{border-bottom:1px solid var(--ink)}
+.collection-intro{margin-bottom:90px}
+.artwork-list{display:flex;flex-direction:column;gap:120px;align-items:center}
+figure{margin:0;width:min(760px,92vw)}
+figure.wide-work{width:min(1120px,92vw)}
+figure img{width:100%;height:auto}
+figcaption{margin-top:14px;font-size:12px;color:var(--muted);letter-spacing:.18em}
+.about-page{display:grid;grid-template-columns:270px minmax(320px,620px);gap:12vw;align-items:start;justify-content:center}
+.about-portrait{width:240px;border:6px solid #050505;filter:grayscale(100%) contrast(1.04)}
+.about-text p{letter-spacing:.05em;line-height:1.55;font-size:15px;max-width:560px}
+.small-note{color:var(--muted);font-size:13px!important;margin-top:36px}.contact-page h1{font-size:38px}
+@media (max-width:760px){
+  .site-header{height:auto;padding:28px 22px;display:block}
+  .name{font-size:15px;display:block;margin-bottom:24px}
+  nav{gap:24px;font-size:12px;flex-wrap:wrap}
+  .banner{height:190px}
+  .home-grid{display:block;min-height:500px;padding:58px 28px 80px}
+  .home-links{padding:0;gap:12px}.home-links a{font-size:30px;letter-spacing:.18em}
+  .portrait-card{width:145px;margin:70px 0 0 auto;border-width:5px}
+  footer{padding:38px 22px;font-size:11px}
+  .page{padding:56px 24px 90px}h1{font-size:30px}.collection-row{font-size:22px;display:block}.collection-row span:last-child{display:block;margin-top:8px;color:var(--muted);font-size:14px}
+  .about-page{display:block}.about-portrait{width:180px;margin-bottom:56px}.artwork-list{gap:72px}
 }
